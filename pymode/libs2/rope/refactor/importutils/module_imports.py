@@ -58,6 +58,8 @@ class ModuleImports(object):
         result = []
         # Writing module docs
         result.extend(after_removing[first_non_blank:first_import])
+        # Writing emtpy line
+        result.append('\n')  # FIXME: Appends even if it's the last line in the source
         # Writing imports
         sorted_imports = sorted(imports, self._compare_import_locations)
         for stmt in sorted_imports:
