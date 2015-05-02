@@ -10,7 +10,7 @@ if !pymode#default('g:pymode_init', 1)
     call pymode#virtualenv#init()
     call pymode#breakpoint#init()
     PymodePython from pymode.utils import patch_paths
-    PymodePython patch_paths()
+    PymodePython patch_paths(rope=vim.eval('g:pymode_rope'))
 endif
 
 command! -buffer -nargs=1 PymodeVirtualenv call pymode#virtualenv#activate(<args>)
